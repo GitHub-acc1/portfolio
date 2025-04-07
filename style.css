@@ -1,147 +1,174 @@
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-  }
-  
-  .wrapper {
-    min-height: calc(100vh - 60px);
-  }
-  
-  nav {
-    background-color: #1a1a1a;
-    padding: 1rem 0;
-  }
-  
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 2rem;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    color: #fbac54;
-  }
-  
-  /* Hero Section */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Wrapper */
+.wrapper {
+  min-height: calc(100vh - 60px);
+}
+
+/* Navigation */
+nav {
+  background-color: #1a1a1a;
+  padding: 1rem 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #fbac54;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #e15720, #fbac54);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero button {
+  margin-top: 1.5rem;
+}
+
+/* Flex Layout Section */
+.flex-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+/* Card-like Box */
+.flex-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+  flex: 1 1 300px;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background-color: #e15720;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #fbac54;
+}
+
+/* Resume Page */
+#modal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.margin {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.margin h1 {
+  color: #e15720;
+  margin-top: 20px;
+  font-size: 1.8rem;
+}
+
+.margin h2 {
+  margin-top: 10px;
+  font-size: 1.4rem;
+}
+
+.margin ul {
+  list-style: disc inside;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.margin p, .margin li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 1rem 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
   .hero {
-    background: linear-gradient(to right, #e15720, #fbac54);
-    color: white;
-    padding: 5rem 2rem;
-    text-align: center;
+    padding: 3rem 1rem;
   }
-  
-  .hero button {
-    margin-top: 1.5rem;
-  }
-  
-  /* Flex Layout Section */
-  .flex-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-    justify-content: center;
-  }
-  
-  /* Card-like Box */
+
   .flex-box {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 400px;
-    flex: 1;
+    flex: 1 1 100%;
   }
-  
-  /* Footer */
-  footer {
-    background-color: #1a1a1a;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    margin-top: 2rem;
-  }
-  
-  /* Button */
-  button {
-    padding: 10px 20px;
-    background-color: #e15720;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  button:hover {
-    background-color: #fbac54;
-  }
-  
-  /* Resume Specific */
+
   #modal {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 2rem auto;
-    flex-wrap: wrap;
-    max-width: 800px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .margin {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 1000px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .margin h1 {
-    color: #e15720;
-    margin-top: 20px;
-    font-size: 1.8rem;
-  }
-  
-  .margin h2 {
-    margin-top: 10px;
-    font-size: 1.4rem;
-  }
-  
-  .margin ul {
-    list-style: disc inside;
-    padding-left: 20px;
-    margin-top: 5px;
-  }
-  
-  .margin p, .margin li {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
+
   .row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin: 1rem 0;
+    flex-direction: column;
   }
-  
+
+  nav ul {
+    gap: 1rem;
+  }
+}
